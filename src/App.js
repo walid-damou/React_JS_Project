@@ -10,13 +10,11 @@ function App() {
     <div className="BeVietnamPro m-0 p-0">
      
      <Router>
-        
-
         <Routes>
             <Route exact path='/' element={<><Header/><Home/><Footer/></>} />
             <Route exact path='/Restaurants' element={<><Header/><Restaurants/><Footer/></>} />
+            <Route exact path='/Restaurants/Details/:id' element={<><Header/><Footer/></>} />
         </Routes>
-    
     </Router>
     </div>
   );
