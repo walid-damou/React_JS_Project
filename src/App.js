@@ -5,10 +5,11 @@ import Footer from './layouts/Footer'
 import Home from './pages/Home'
 function App() {
   return (
-    <div className="BeVietnamPro m-0 p-0">
+    <div className="Nunito m-0 p-0">
      <Header/>
      <Home/>
      <Footer/>
+    
     </div>
   );
 }
