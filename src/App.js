@@ -6,19 +6,23 @@ import Home from './pages/Home'
 import Restaurants from './components/Restaurants/Restaurants'
 import RestauDetails from './components/Restaurants/RestauDetails'
 import { BrowserRouter as Router ,Route ,Routes } from 'react-router-dom';
+
 function App() {
   return (
     <div className="BeVietnamPro m-0 p-0">
      
      <Router>
+     <Header/>
         <Routes>
-            <Route exact path='/' element={<><Header/><Home/><Footer/></>} />
-            <Route exact path='/Restaurants' element={<><Header/><Restaurants/><Footer/></>} />
-            <Route exact path='/Restaurants/Details/:id' element={<><Header/><RestauDetails/><Footer/></>} />
+            <Route exact path='/' element={<Home/>} />
+            <Route exact path='/Restaurants' element={<Restaurants/>} />
+            
+            <Route exact path='/Restaurants/Details/:id' element={<RestauDetails/>} />
         </Routes>
+        <Footer/>
     </Router>
     </div>
   );
 }
 
-export default App;
+export default App;

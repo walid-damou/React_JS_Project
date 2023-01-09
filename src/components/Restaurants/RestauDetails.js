@@ -6958,13 +6958,13 @@ function RestauDetails() {
         return(
             
             
-            <section className='w-50 border border-2 m-20 p-10'>
+            <section className=' border-2 p-10 m-2 sm:m-10 sm:p-10  lg:p-10 lg:m-20 xl:p-10 xl:m-20'>
                 <div className='flex justify-center mb-10'>
                     <h5 class=" mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{restoData[id].name}</h5>
                 </div>
                 <div className='grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4'>
                     <div className='col1'>
-                        <img class=" h-full object-cover  rounded-t-lg " src={restoData[id].photo.images.large.url} alt="" />
+                        <img class=" h-full  object-cover  rounded-t-lg " src={restoData[id].photo.images.large.url} alt="" />
                     </div>
                     <div className='col2 ml-5'>
                         <div className='flex justify-center'>

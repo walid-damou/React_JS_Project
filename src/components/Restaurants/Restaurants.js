@@ -6977,9 +6977,9 @@ function Restaurants() {
         return(
             
             
-            <section className='w-50 m-10 p-10'>
+            <section className='m-5 p-10 md:m-10 md:p-10 sm:m-0 sm:p-0'>
                 <div className="flex justify-center mb-10">
-                    <h1 className="text-center  text-darkGrey font-bold text-4xl  md:text-4xl w-1/2">Welcome to our guide to the best restaurants in <span className="text-mainColor">Qatar. </span></h1>
+                <h1 className="text-center text-darkGrey font-bold text-4xl  md:text-4xl md:w-1/2">Welcome to our guide to the best restaurants in <span className="text-mainColor">Qatar. </span></h1>
                 </div>
                 
                 
@@ -6988,7 +6988,7 @@ function Restaurants() {
                     <div className=" grid  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         
                         { currentRestos.map((resto , index)=>{
-                            console.log(resto.photo)
+                            //console.log(resto.photo)
                             return(
                                 <a href={"/Restaurants/Details/"+(firstRestoIndex+index)} className="hover:scale-110">
                                     <div className="m-5 max-w-sm rounded overflow-hidden shadow-lg">
