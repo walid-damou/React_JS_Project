@@ -8,6 +8,7 @@ import RestauDetails from './components/Restaurants/RestauDetails'
 import { BrowserRouter as Router ,Route ,Routes } from 'react-router-dom';
 import Hotels from './pages/Hotels';
 
+
 function App() {
   return (
     <div className="BeVietnamPro m-0 p-0">
@@ -21,9 +22,10 @@ function App() {
             <Route exact path='/Restaurants/Details/:id' element={<RestauDetails/>} />
         </Routes>
         <Footer/>
+        <Footer/>
     </Router>
     </div>
   );
 }
 
-export default App;
+export default App;
