@@ -3,22 +3,26 @@ import './App.css';
 import Header from './layouts/Header'
 import Footer from './layouts/Footer'
 import Home from './pages/Home'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Restaurants from './components/Restaurants/Restaurants'
+import RestauDetails from './components/Restaurants/RestauDetails'
+import { BrowserRouter as Router ,Route ,Routes } from 'react-router-dom';
 import Hotels from './pages/Hotels';
 
 function App() {
   return (
-    <Router>
-
-      <div className="Nunito m-0 p-0">
-        <Header />
+    <div className="BeVietnamPro m-0 p-0">
+     
+     <Router>
+     <Header/>
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/Hotels" exact element={<Hotels />} />
+            <Route exact path='/' element={<Home/>} />
+            <Route exact path='/Restaurants' element={<Restaurants/>} />
+            <Route exact path='/Hotels' element={<Hotels/>} />
+            <Route exact path='/Restaurants/Details/:id' element={<RestauDetails/>} />
         </Routes>
-        <Footer />
-      </div>
+        <Footer/>
     </Router>
+    </div>
   );
 }
 
