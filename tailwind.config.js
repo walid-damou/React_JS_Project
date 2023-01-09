@@ -25,8 +25,10 @@ module.exports = {
         'qatarGraphic1': "url('/src/assets/images/qatarGraphic1.jpg')",
         'qatarGraphic2': "url('/src/assets/images/qatarGraphic2.jpg')",
         'qatar2':"url('/src/assets/images/qatar2.jpg')",
-        'qatar1':"url('/src/assets/images/qatar1.jpg')",
         'qatar3':"url('/src/assets/images/qatar3.jpg')",
+        'qatar4':"url('/src/assets/images/qatar4.jpg')",
+        'qatar5':"url('/src/assets/images/qatar5.jpg')",
+
 
 
 
