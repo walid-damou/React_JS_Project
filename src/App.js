@@ -4,6 +4,7 @@ import Header from './layouts/Header'
 import Footer from './layouts/Footer'
 import Home from './pages/Home'
 import Restaurants from './components/Restaurants/Restaurants'
+import RestauDetails from './components/Restaurants/RestauDetails'
 import { BrowserRouter as Router ,Route ,Routes } from 'react-router-dom';
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Routes>
             <Route exact path='/' element={<><Header/><Home/><Footer/></>} />
             <Route exact path='/Restaurants' element={<><Header/><Restaurants/><Footer/></>} />
-            <Route exact path='/Restaurants/Details/:id' element={<><Header/><Footer/></>} />
+            <Route exact path='/Restaurants/Details/:id' element={<><Header/><RestauDetails/><Footer/></>} />
         </Routes>
     </Router>
     </div>

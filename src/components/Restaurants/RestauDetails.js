@@ -1,27 +1,11 @@
 import React , { useEffect , useState } from 'react'
-import Pagination from './Pagination'
-function Restaurants() {
-    const [restoData , setRestoData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [RestosPerPage, setRestosPerPage] = useState(6);
-    const [showRestos, setshowRestos] = useState(false);
+import { useParams} from 'react-router-dom';
 
-    // useEffect(()=>{
-    //     console.log('start')
-    //     const options = {
-    //         method: 'GET',
-    //         headers: {
-    //             'X-RapidAPI-Key': '568876b392msh8e9eff9728a2702p1ced5ajsn7fd686877f74',
-    //             'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
-    //         }
-    //     };
-        
-    //     fetch('https://travel-advisor.p.rapidapi.com/restaurants/list?location_id=293919&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&currency=USD&lunit=km&limit=30&open_now=false&lang=en_US', options)
-    //         .then(response => response.json())
-    //         .then(response => setRestoData(response))
-    //         .catch(err => console.error(err));
-            
-    // },[])
+function RestauDetails() {
+    const [restoData , setRestoData] = useState([]);
+    const [showRestos, setshowRestos] = useState(false);
+    const params =useParams();
+    const id = params.id;
     useEffect(()=>{
         async function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -6969,57 +6953,83 @@ function Restaurants() {
     
     
     if (showRestos) {
-        const lastRestoIndex = currentPage * RestosPerPage;
-        const firstRestoIndex = lastRestoIndex - RestosPerPage;
-        const currentRestos = restoData.slice(firstRestoIndex, lastRestoIndex);
-        // console.log('currentPage',currentPage)
+        // console.log(restoData[id])
         // console.log('currentRestos',currentRestos)
         return(
             
             
-            <section className='w-50 m-10 p-10'>
-                <div className="flex justify-center mb-10">
-                    <h1 className="text-center  text-darkGrey font-bold text-4xl  md:text-4xl w-1/2">Welcome to our guide to the best restaurants in <span className="text-mainColor">Qatar. </span></h1>
+            <section className='w-50 border border-2 m-20 p-10'>
+                <div className='flex justify-center mb-10'>
+                    <h5 class=" mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{restoData[id].name}</h5>
                 </div>
-                
-                
-               
-                <div className='flex justify-center'>
-                    <div className=" grid  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        
-                        { currentRestos.map((resto , index)=>{
-                            console.log(resto.photo)
-                            return(
-                                <a href={"/Restaurants/Details/"+(firstRestoIndex+index)} className="hover:scale-110">
-                                    <div className="m-5 max-w-sm rounded overflow-hidden shadow-lg">
-                                        <img className="w-full max-h-48" src={resto.photo==undefined ? 'https://media-cdn.tripadvisor.com/media/photo-w/16/3b/fc/8d/interior-area.jpg' : resto.photo.images.large.url} alt="Sunset in the mountains"/>
-                                        <div className="px-6 py-4">
-                                        <div className="font-bold text-xl mb-2">{resto.name==undefined ? 'Title' : resto.name}</div>
-                                        <p className="text-gray-700 text-base">{resto.description==undefined ? 'lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée ' : resto.description.slice(0,90)}</p>
-                                        </div>
-                                        <div className="px-6 pt-4 pb-2">
-                                        {/* <div className="font-bold text-sm mb-2">{resto.email}</div> */}
-                                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{resto.address_obj==undefined ? 'Dukhan' : 'Doha' }</span>
-                                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{resto.phone==undefined ? '+66 83 625 121' : resto.phone}</span>
-                                        <a href={resto.website}><span className="inline-block bg-gray-200 rounded-full px-3 py-1  hover:bg-green-300 text-sm font-semibold text-gray-700 mr-2 mb-2">Website</span></a>
-                                        </div>
-                                    </div>
-                                </a>
-                            )
-                            
-                        }) }
+                <div className='grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4'>
+                    <div className='col1'>
+                        <img class=" h-full object-cover  rounded-t-lg " src={restoData[id].photo.images.large.url} alt="" />
                     </div>
+                    <div className='col2 ml-5'>
+                        <div className='flex justify-center'>
+                            <h5 class=" mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Informations</h5>
+                        </div>
+                        <ol class="relative text-gray-500 border-l border-gray-200 dark:border-gray-700 dark:text-gray-400">                  
+                            
+                            <li class="mb-10 ml-6">            
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">{restoData[id].open_now_text}</h3>
+                                <p class="text-sm">Step details here</p>
+                            </li>
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Description</h3>
+                                <p class="text-sm">{restoData[id].description}</p>
+                            </li>
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Address</h3>
+                                <p class="text-sm">{restoData[id].address}</p>
+                            </li>
+                            <li class="mb-10 ml-6">
+                            <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Price</h3>
+                                <p class="text-sm">{restoData[id].price}</p>
+                            </li>
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Phone</h3>
+                                <p class="text-sm">{restoData[id].phone}</p>
+                            </li>
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Email</h3>
+                                <p class="text-sm">{restoData[id].email}</p>
+                            </li>
+                            <li class=" ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Website</h3>
+                                <p class="text-sm"><a href='{restoData[id].website}' target='_blank' >{restoData[id].website}</a></p>
+                            </li>
+                            
+                        </ol>                        
+                    </div>
+                    
+                
                 </div>
-                <Pagination 
-                    totalRestos = {restoData.length} 
-                    RestosPerPage = {RestosPerPage} 
-                    setCurrentPage={setCurrentPage}
-                    currentPage = {currentPage} 
-                    />        
+                
             </section>
-        )
-    }
-
+        )}
 }
 
-export default Restaurants
+export default RestauDetails
