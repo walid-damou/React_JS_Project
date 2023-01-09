@@ -22,7 +22,6 @@ function App() {
             <Route exact path='/Restaurants/Details/:id' element={<RestauDetails/>} />
         </Routes>
         <Footer/>
-        <Footer/>
     </Router>
     </div>
   );
