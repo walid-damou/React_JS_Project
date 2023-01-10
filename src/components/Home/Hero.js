@@ -1,5 +1,7 @@
 import React from "react";
 import qatarillustration from '../../assets/images/qatarillustration.png'
+import { Link } from "react-router-dom";
+
 const Hero = () => {
 
     return (
@@ -10,9 +12,9 @@ const Hero = () => {
                     <h1 className="text-darkGrey font-bold text-4xl md:text-justify md:text-4xl">Welcome to <span className="text-mainColor">QatariVoyage</span>, where you can experience the beauty and culture of <span className="text-mainColor">Qatar</span></h1>
                     <p className="text-darkGrey font-semibold text-sm md:text-justify">
                         Discover the treasures of Qatar with our comprehensive travel website. We offer translation services, up-to-date weather information, suggestions for top places to visit, and a currency converter to make your trip stress-free and enjoyable.</p>
-                    <div className="space-y-4 md:space-y-0 md:space-x-4">
-                        <input type="button" value="weather" className="uppercase rounded-md py-2  w-36 font-semibold shadow-3xl cursor-pointer border border-mainColor hover:text-mainColor hover:bg-white text-white bg-mainColor" />
-                        <input type="button" value="currency" className="uppercase rounded-md py-2 w-36 font-semibold shadow-3xl cursor-pointer text-lightColor border border-lightColor bg-white hover:text-white hover:bg-lightColor" />
+                    <div className="space-x-4">
+                    <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer border border-mainColor hover:text-mainColor hover:bg-white text-white bg-mainColor">Weather</Link>
+                    <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer text-lightColor border border-lightColor bg-white hover:text-white hover:bg-lightColor">Currency</Link>
                     </div>
                 </div>
 
