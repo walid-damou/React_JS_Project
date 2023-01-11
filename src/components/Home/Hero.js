@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import qatarillustration from '../../assets/images/qatarillustration.png'
 import { Link } from "react-router-dom";
+import Modal from '../Currency/Modal';
 
-const Hero = () => {
-
+const Hero = ({test2}) => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <section className="mx-5 md:mx-20">
             <div className="flex flex-col-reverse py-10 md:flex-row md:justify-between md:items-center md:space-x-16">
@@ -14,7 +15,7 @@ const Hero = () => {
                         Discover the treasures of Qatar with our comprehensive travel website. We offer translation services, up-to-date weather information, suggestions for top places to visit, and a currency converter to make your trip stress-free and enjoyable.</p>
                     <div className="space-x-4">
                     <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer border border-mainColor hover:text-mainColor hover:bg-white text-white bg-mainColor">Weather</Link>
-                    <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer text-lightColor border border-lightColor bg-white hover:text-white hover:bg-lightColor">Currency</Link>
+                    <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer text-lightColor border border-lightColor bg-white hover:text-white hover:bg-lightColor" onClick={() => setIsOpen(true)}>Currency</Link>
                     </div>
                 </div>
 
@@ -23,8 +24,11 @@ const Hero = () => {
                 <img src={qatarillustration} alt="qatar" className=""/>
                 </div>
             </div>
+            {isOpen && (<Modal close={()=>setIsOpen(false)}/>)}
         </section>
+        
     );
+    
 };
 
 export default Hero;

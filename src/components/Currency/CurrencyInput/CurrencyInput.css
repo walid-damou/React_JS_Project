@@ -1,0 +1,25 @@
+.group {
+    background-color: #56042C;
+    width: 300px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: 200px 100px;
+    border-radius: 205px;
+    color: #fff;
+}
+
+input,select {
+    background: none;
+    border: 0;
+}
+select {
+    padding: 15px;
+}
+.custom-select-currency {
+    background-color: #56042C;
+    border-radius: 205px;
+    outline: none;
+}
+.custom-select-currency  option:not(:first-child){
+    background-color: #3d4852;
+}

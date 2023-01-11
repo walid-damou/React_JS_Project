@@ -27,7 +27,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/" className="block py-2 pl-3 pr-4  text-gray-700 md:p-0  hover:text-mainColor">Currency change</Link>
+              <Link to="/Currency" className="block py-2 pl-3 pr-4  text-gray-700 md:p-0  hover:text-mainColor">Currency change</Link>
             </div>
           </div>
         </div>
