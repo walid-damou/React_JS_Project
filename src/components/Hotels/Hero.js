@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <section>
 
-            <div class="flex flex-col md:items-center md:flex-row md:justify-between relative bg-cover h-96 bg-no-repeat bg-center bg-qatar5">
+            <div className="flex flex-col md:items-center md:flex-row md:justify-between relative bg-cover h-96 bg-no-repeat bg-center bg-qatar5">
             </div>
             <h1 className="text-darkGrey font-bold text-4xl text-center my-12" > Discover the best hotels in <span className='text-mainColor'>Qatar </span>for you </h1>
 
@@ -13,17 +13,17 @@ const Hero = () => {
                 {
                     Hotels.map((hotel) => (
 
-                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md md:h-[400px] md:w-[300px]">
+                        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md md:h-[400px] md:w-[300px]">
                             <a href="#">
-                                <img class="rounded-t-lg h-1/2 w-full" src={hotel.img} alt={hotel.name} />
+                                <img className="rounded-t-lg h-1/2 w-full" src={hotel.img} alt={hotel.name} />
                             </a>
-                            <div class="p-5">
+                            <div className="p-5">
                                 <a href="#">
-                                    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 ">{hotel.name}</h5>
+                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 ">{hotel.name}</h5>
                                 </a>
-                                <p class="mb-3 font-normal text-gray-700 capitalize"><i class="fa-solid fa-location-pin pr-3"></i>{hotel.address}</p>
-                                <p class="mb-3 font-normal text-gray-700 "><i class="fa-solid fa-phone pr-3"></i>{hotel.phoneNumber}</p>
-                                <p class="mb-3 font-normal text-gray-700 capitalize"><i class="fa-solid fa-arrow-right pr-3"></i>{hotel.amenities}</p>
+                                <p className="mb-3 font-normal text-gray-700 capitalize"><i className="fa-solid fa-location-pin pr-3"></i>{hotel.address}</p>
+                                <p className="mb-3 font-normal text-gray-700 "><i className="fa-solid fa-phone pr-3"></i>{hotel.phoneNumber}</p>
+                                <p className="mb-3 font-normal text-gray-700 capitalize"><i className="fa-solid fa-arrow-right pr-3"></i>{hotel.amenities}</p>
 
 
                                

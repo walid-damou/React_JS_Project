@@ -108,5 +108,5 @@ export const PopularPlacesData = [
         "shortDescription": "The farm takes pride in preserving the cultural heritage of the country. Through the Qatari museum, different local trees.",
         "description": "The farm takes pride in preserving the cultural heritage of the country. Through the Qatari museum, different local trees, and various activities, visitors get a unique chance to experience the local culture in one place. The farm has a mini zoo with various animals, including Arabian Oryx, zebra, ostrich, lama, and camels.",
         "image":"https://visitqatar.com/content/dam/visitqatar/img/images-for-attractions/north-sedra-farm/gazelle_28_11zon.jpg/jcr:content/renditions/small-800px.jpeg"
-    },
+    }
 ]
