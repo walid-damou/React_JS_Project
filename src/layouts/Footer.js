@@ -22,7 +22,7 @@ const Footer = () => {
                         <a href="#" className="hover:underline">Translation</a>
                     </li>
                     <li className="mb-4">
-                        <a href="#" className="hover:underline">Weather</a>
+                        <a href="/weather" className="hover:underline">Weather</a>
                     </li>
                     <li>
                         <a  style={{cursor:"pointer"}} onClick={() => setIsOpen(true)} className="hover:underline">Currency Change</a>

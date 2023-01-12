@@ -27,23 +27,39 @@ function Weather() {
       return 'linear-gradient(to bottom right, #FEC310, #56042C)';
     }*/
     return (
-      <div className="w-full h-full" style={{
+      
+      <div className={`w-full h-full mt-4 py-5 px-0.5 bg-gradient-to-br `} style={{
         backgroundImage: "linear-gradient(to bottom right, #FEC310, #56042C)"}}>
-      <div className={`mx-auto max-w-screen-md mt-4 py-5 px-0.5 bg-gradient-to-br  `} 
-      >
-        <TopButtons setQuery={setQuery} />
-        <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+        <div className="w-full flex flex-row">
+  <div className="w-1/2 justify-start">
+    <TopButtons setQuery={setQuery} />
+  </div>
+  <div className="w-1/2 justify-end">
+    <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+  </div>
+</div>
+
         {weather && (
           <>
+          <div className='mx-32'>
             <TimeAndLocation weather={weather} />
             <TempratureAndDetails weather={weather} />
-            <Forecast title="hourly forecast" items={weather.hourly} />
-            <Forecast title="daily forecast" items={weather.daily} />
+          </div>
+            <div className="flex w-full">
+  <div className="w-1/2 justify-start mx-10">
+    <Forecast title="hourly forecast" items={weather.hourly} />
+  </div>
+  <div className="w-1/2 justify-end mx-10">
+    <Forecast title="daily forecast" items={weather.daily} />
+  </div>
+</div>
+
+
           </>
         )}
         
       </div>
-      </div>
+
     );
 }
 
