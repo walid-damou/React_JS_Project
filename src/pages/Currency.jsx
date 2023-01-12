@@ -1,7 +1,7 @@
 import React from 'react';
 import CurrencyInput from '../components/Currency/CurrencyInput/CurrencyInput';
 import { useState, useEffect } from 'react';
-
+/* this page is not used */
 function Currency() {
     const [isOpen, setIsOpen] = useState(false);
     const [amount1, setAmount1]= useState(1);
