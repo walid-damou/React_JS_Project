@@ -14,7 +14,7 @@ const Hero = () => {
                     <p className="text-darkGrey font-semibold text-sm md:text-justify">
                         Discover the treasures of Qatar with our comprehensive travel website. We offer translation services, up-to-date weather information, suggestions for top places to visit, and a currency converter to make your trip stress-free and enjoyable.</p>
                     <div className="space-x-4">
-                    <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer border border-mainColor hover:text-mainColor hover:bg-white text-white bg-mainColor">Weather</Link>
+                    <Link to="/Weather" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer border border-mainColor hover:text-mainColor hover:bg-white text-white bg-mainColor">Weather</Link>
                     <Link to="/" className="uppercase rounded-md py-2 px-5  font-semibold shadow-3xl cursor-pointer text-lightColor border border-lightColor bg-white hover:text-white hover:bg-lightColor" onClick={() => setIsOpen(true)}>Currency</Link>
                     </div>
                 </div>
