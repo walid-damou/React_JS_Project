@@ -22,7 +22,7 @@ const Header = () => {
                 <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 ">
                   <div class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
                     <Link to="/Hotels" className="block px-4 py-2  hover:text-mainColor">Hotels</Link>
-                    <Link to="/" className="block px-4 py-2  hover:text-mainColor">Restaurants</Link>
+                    <Link to="/Restaurants" className="block px-4 py-2  hover:text-mainColor">Restaurants</Link>
                     <Link to="/" className="block px-4 py-2  hover:text-mainColor">Popular Places</Link>
                   </div>
                 </div>
