@@ -45,7 +45,7 @@ function Weather() {
             <TimeAndLocation weather={weather} />
             <TempratureAndDetails weather={weather} />
           </div>
-            <div className="flex w-full">
+            <div className="flex w-full pb-8">
   <div className="w-1/2 justify-start mx-10">
     <Forecast title="hourly forecast" items={weather.hourly} />
   </div>
