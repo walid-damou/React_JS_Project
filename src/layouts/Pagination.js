@@ -17,7 +17,7 @@ function Pagination({totalRestos,RestosPerPage,setCurrentPage,currentPage,}) {
                 {pages.map((page, index) => {
                     return (
                         <li key={index}>
-                            <a    onClick={() => setCurrentPage(page)} className="px-3 py-2 cursor-pointer leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" >{page}</a>
+                            <a    onClick={() => setCurrentPage(page)} className={currentPage==page ? "px-3 py-2 cursor-pointer leading-tight font-bold text-green-500 bg-green-100 border border-gray-300 hover:bg-green-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" : "px-3 py-2 cursor-pointer leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" } >{page}</a>
                         </li>
                     );
                 })}
