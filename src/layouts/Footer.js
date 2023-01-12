@@ -1,7 +1,9 @@
-import React from 'react'
-import logo from '../assets/images/logo.png'
+import React, {useState} from 'react';
+import logo from '../assets/images/logo.png';
+import Modal from '../components/Currency/Modal';
 
 const Footer = () => {
+    const [isOpen, setIsOpen] = useState(false);
   return (
    
    
@@ -23,7 +25,7 @@ const Footer = () => {
                         <a href="#" className="hover:underline">Weather</a>
                     </li>
                     <li>
-                        <a href="#" className="hover:underline">Currency Change</a>
+                        <a  style={{cursor:"pointer"}} onClick={() => setIsOpen(true)} className="hover:underline">Currency Change</a>
                     </li>
                 </ul>
             </div>
@@ -74,6 +76,7 @@ const Footer = () => {
            
         </div>
     </div>
+    {isOpen && (<Modal close={()=>setIsOpen(false)}/>)}
 </footer>
 
 
