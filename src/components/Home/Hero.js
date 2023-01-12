@@ -3,7 +3,7 @@ import qatarillustration from '../../assets/images/qatarillustration.png'
 import { Link } from "react-router-dom";
 import Modal from '../Currency/Modal';
 
-const Hero = ({test2}) => {
+const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <section className="mx-5 md:mx-20">

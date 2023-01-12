@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import logo from '../assets/images/logo.png'
 import { Link } from "react-router-dom";
+import Modal from '../components/Currency/Modal';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className='my-2 mx-5 md:mx-20 '>
       <nav className="bg-white border-gray-200 ">
@@ -27,12 +29,12 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/Currency" className="block py-2 pl-3 pr-4  text-gray-700 md:p-0  hover:text-mainColor">Currency change</Link>
+              <Link onClick={() => setIsOpen(true)} className="block py-2 pl-3 pr-4  text-gray-700 md:p-0  hover:text-mainColor">Currency change</Link>
             </div>
           </div>
         </div>
       </nav>
-
+      {isOpen && (<Modal close={()=>setIsOpen(false)}/>)}
 
     </header>
 

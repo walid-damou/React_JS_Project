@@ -63,7 +63,6 @@ function Modal(props) {
       </div>
     </div>
 </div>
-<Hero/>
     </>
   )
 }
