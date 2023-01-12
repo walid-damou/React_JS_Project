@@ -28,6 +28,7 @@ module.exports = {
         'qatar3':"url('/src/assets/images/qatar3.jpg')",
         'qatar4':"url('/src/assets/images/qatar4.jpg')",
         'qatar5':"url('/src/assets/images/qatar5.jpg')",
+        'placeBG':"url('/src/assets/images/placesbg.png')",
 
 
 
